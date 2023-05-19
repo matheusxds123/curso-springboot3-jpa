@@ -17,17 +17,17 @@ import com.matheusxavier.course.services.CategoryService;
 public class CategoryResource {
 	
 	@Autowired
-	private CategoryService categotyService;
+	private CategoryService categoryService;
 	
 	@GetMapping
 	public ResponseEntity<List<Category>> findAll(){
-		List<Category> categoryList = categotyService.findAll();
+		List<Category> categoryList = categoryService.findAll();
 		return ResponseEntity.ok().body(categoryList);
 	}
 	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Category> findById(@PathVariable Long id){
-		Category category = categotyService.findById(id);
+		Category category = categoryService.findById(id);
 		return ResponseEntity.ok().body(category);
 	}
 	
